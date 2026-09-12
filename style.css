@@ -1,24 +1,39 @@
-/* =========================
+/* =========================================================
    ROOT VARIABLES
-========================= */
+========================================================= */
 
 :root {
     --navy: #0b1f3a;
     --navy-light: #16365f;
+
     --blue: #2563eb;
+    --blue-dark: #1d4ed8;
     --blue-light: #eff6ff;
+
     --accent: #38bdf8;
+
     --white: #ffffff;
     --light-bg: #f8fafc;
+
     --text: #334155;
     --dark-text: #0f172a;
+
     --border: #e2e8f0;
+
+    --success-bg: #dcfce7;
+    --success-text: #166534;
+
+    --warning-bg: #fef3c7;
+    --warning-text: #92400e;
+
+    --purple-bg: #ede9fe;
+    --purple-text: #6d28d9;
 }
 
 
-/* =========================
+/* =========================================================
    GLOBAL
-========================= */
+========================================================= */
 
 * {
     margin: 0;
@@ -40,7 +55,9 @@ body {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
     font-family: "Poppins", sans-serif;
     color: var(--dark-text);
 }
@@ -49,24 +66,38 @@ a {
     text-decoration: none;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
 
-/* =========================
+
+/* =========================================================
    NAVIGATION
-========================= */
+========================================================= */
 
 .navbar {
     background-color: rgba(11, 31, 58, 0.97);
     padding: 14px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+    box-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.08);
+
+    backdrop-filter: blur(10px);
 }
 
 .navbar-brand {
+    color: var(--white) !important;
     letter-spacing: 1px;
 }
 
 .nav-link {
-    color: rgba(255, 255, 255, 0.8) !important;
+    color: rgba(255, 255, 255, 0.82) !important;
     margin-left: 12px;
+
+    font-size: 0.95rem;
+    font-weight: 500;
+
     transition: 0.3s;
 }
 
@@ -76,9 +107,9 @@ a {
 }
 
 
-/* =========================
-   HERO
-========================= */
+/* =========================================================
+   HERO SECTION
+========================================================= */
 
 .hero-section {
     background:
@@ -87,6 +118,7 @@ a {
             var(--navy) 0%,
             var(--navy-light) 100%
         );
+
     color: var(--white);
 }
 
@@ -101,49 +133,95 @@ a {
 
 .hero-tagline {
     color: #cbd5e1;
+
     font-size: 1.4rem;
+
+    line-height: 1.5;
+
     margin: 20px 0;
 }
 
 .hero-text {
     color: #dbeafe;
+
     max-width: 700px;
+
     font-size: 1.05rem;
 }
 
 
-/* =========================
+/* =========================================================
+   SECTION LABELS
+========================================================= */
+
+.section-label {
+    color: var(--blue);
+
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.light-label {
+    color: var(--accent);
+}
+
+
+/* =========================================================
    BUTTONS
-========================= */
+========================================================= */
 
 .hero-buttons {
     display: flex;
     flex-wrap: wrap;
+
     gap: 15px;
+
     margin-top: 30px;
 }
 
 .btn-primary-custom {
+    display: inline-block;
+
     background-color: var(--blue);
     color: var(--white);
+
     padding: 12px 24px;
+
     border-radius: 8px;
+
     font-weight: 600;
+
+    border: 1px solid var(--blue);
+
     transition: 0.3s;
 }
 
 .btn-primary-custom:hover {
-    background-color: #1d4ed8;
+    background-color: var(--blue-dark);
+    border-color: var(--blue-dark);
+
     color: var(--white);
+
     transform: translateY(-2px);
 }
 
 .btn-outline-custom {
+    display: inline-block;
+
     border: 1px solid var(--accent);
+
     color: var(--accent);
+
     padding: 12px 24px;
+
     border-radius: 8px;
+
     font-weight: 600;
+
     transition: 0.3s;
 }
 
@@ -153,32 +231,40 @@ a {
 }
 
 
-/* =========================
+/* =========================================================
    PROFILE CARD
-========================= */
+========================================================= */
 
 .profile-card {
     background-color: var(--white);
     color: var(--text);
+
     padding: 40px;
+
     border-radius: 18px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.2);
 }
 
 .profile-card h3 {
     text-align: center;
+
     margin-top: 15px;
 }
 
 .profile-role {
     text-align: center;
+
     color: var(--blue);
+
     font-weight: 600;
 }
 
 .profile-icon {
     width: 80px;
     height: 80px;
+
     margin: auto;
 
     display: flex;
@@ -192,7 +278,7 @@ a {
 
     font-family: "Poppins", sans-serif;
     font-size: 1.7rem;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .contact-item {
@@ -201,18 +287,24 @@ a {
 
 .contact-item strong {
     display: block;
+
     color: var(--dark-text);
 }
 
 .contact-item a {
     color: var(--blue);
+
     word-break: break-word;
 }
 
+.contact-item a:hover {
+    color: var(--blue-dark);
+}
 
-/* =========================
+
+/* =========================================================
    GENERAL SECTIONS
-========================= */
+========================================================= */
 
 .section-padding {
     padding: 90px 0;
@@ -222,58 +314,122 @@ a {
     background-color: var(--light-bg);
 }
 
-.section-label {
-    color: var(--blue);
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-}
-
 .section-title {
     font-size: 2.2rem;
+
     margin-bottom: 20px;
 }
 
 .section-description {
     max-width: 750px;
+
     font-size: 1.05rem;
 }
 
 
-/* =========================
+/* =========================================================
    HOME HIGHLIGHTS
-========================= */
+========================================================= */
 
 .highlight-card {
     height: 100%;
+
     padding: 35px;
-    border: 1px solid var(--border);
-    border-radius: 14px;
+
     background-color: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
     transition: 0.3s;
 }
 
 .highlight-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+
+    box-shadow:
+        0 15px 35px rgba(15, 23, 42, 0.08);
 }
 
 .highlight-number {
     color: var(--blue);
+
     font-family: "Poppins", sans-serif;
+
     font-weight: 700;
+
     font-size: 1.2rem;
+
     margin-bottom: 20px;
 }
 
 
-/* =========================
+/* =========================================================
+   QUICK LINK CARDS
+========================================================= */
+
+.quick-link-card {
+    display: block;
+
+    height: 100%;
+
+    padding: 35px;
+
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    transition: 0.3s;
+}
+
+.quick-link-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 15px 35px rgba(15, 23, 42, 0.08);
+}
+
+.quick-link-number {
+    display: block;
+
+    color: var(--blue);
+
+    font-family: "Poppins", sans-serif;
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+}
+
+.quick-link-card h3 {
+    color: var(--dark-text);
+
+    margin-bottom: 12px;
+}
+
+.quick-link-card p {
+    color: var(--text);
+
+    margin-bottom: 20px;
+}
+
+.quick-link-arrow {
+    color: var(--blue);
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
    PAGE HEADER
-========================= */
+========================================================= */
 
 .page-header {
     padding: 170px 0 80px;
+
     background:
         linear-gradient(
             135deg,
@@ -284,19 +440,22 @@ a {
 
 .page-header h1 {
     color: var(--white);
+
     font-size: 3rem;
 }
 
 .page-header p:not(.section-label) {
     color: #cbd5e1;
+
     max-width: 700px;
+
     margin: 15px auto 0;
 }
 
 
-/* =========================
+/* =========================================================
    SKILLS
-========================= */
+========================================================= */
 
 .skill-category {
     margin-bottom: 90px;
@@ -304,8 +463,11 @@ a {
 
 .category-heading {
     display: flex;
+
     gap: 20px;
+
     align-items: flex-start;
+
     margin-bottom: 35px;
 }
 
@@ -313,11 +475,16 @@ a {
     margin-bottom: 5px;
 }
 
+.category-heading p {
+    margin-bottom: 0;
+}
+
 .category-number {
     min-width: 50px;
     height: 50px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -327,16 +494,19 @@ a {
     border-radius: 10px;
 
     font-family: "Poppins", sans-serif;
+
     font-weight: 700;
 }
 
 .skill-card {
     height: 100%;
+
     padding: 28px;
 
     background-color: var(--white);
 
     border: 1px solid var(--border);
+
     border-radius: 14px;
 
     transition: 0.3s;
@@ -344,27 +514,36 @@ a {
 
 .skill-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+
+    box-shadow:
+        0 12px 30px rgba(15, 23, 42, 0.08);
 }
 
 .skill-card-header {
     display: flex;
+
     justify-content: space-between;
+
     align-items: flex-start;
+
     gap: 15px;
+
     margin-bottom: 15px;
 }
 
 .skill-card h3 {
     font-size: 1.2rem;
+
     margin-bottom: 0;
 }
 
 .rating {
     padding: 5px 10px;
+
     border-radius: 20px;
 
     font-size: 0.7rem;
+
     font-weight: 700;
 
     white-space: nowrap;
@@ -376,8 +555,8 @@ a {
 }
 
 .beginner {
-    background-color: #fef3c7;
-    color: #92400e;
+    background-color: var(--warning-bg);
+    color: var(--warning-text);
 }
 
 .intermediate {
@@ -386,43 +565,55 @@ a {
 }
 
 .proficient {
-    background-color: #dcfce7;
-    color: #166534;
+    background-color: var(--success-bg);
+    color: var(--success-text);
 }
 
 .expert {
-    background-color: #ede9fe;
-    color: #6d28d9;
+    background-color: var(--purple-bg);
+    color: var(--purple-text);
 }
 
 
-/* =========================
-   SKILL GAPS
-========================= */
+/* =========================================================
+   SKILL GAP SECTION
+========================================================= */
 
 .skill-gaps {
     padding: 50px;
+
     background-color: var(--navy);
+
     border-radius: 20px;
+
     color: #dbeafe;
 }
 
 .skill-gaps h2 {
     color: var(--white);
+
+    margin-bottom: 15px;
+}
+
+.skill-gaps > p {
+    max-width: 850px;
 }
 
 .gap-card {
     height: 100%;
+
     padding: 25px;
 
     background-color: rgba(255, 255, 255, 0.08);
 
     border: 1px solid rgba(255, 255, 255, 0.1);
+
     border-radius: 12px;
 }
 
 .gap-card h3 {
     color: var(--accent);
+
     font-size: 1.1rem;
 }
 
@@ -431,18 +622,21 @@ a {
 }
 
 
-/* =========================
+/* =========================================================
    CAREER TIMELINE
-========================= */
+========================================================= */
 
 .career-timeline {
     max-width: 900px;
+
     margin: auto;
 }
 
 .timeline-item {
     display: grid;
+
     grid-template-columns: 180px 1fr;
+
     gap: 40px;
 
     padding-bottom: 60px;
@@ -450,13 +644,17 @@ a {
 
 .timeline-year {
     color: var(--blue);
+
     font-family: "Poppins", sans-serif;
+
     font-size: 1.3rem;
+
     font-weight: 700;
 }
 
 .timeline-content {
     padding-left: 35px;
+
     border-left: 3px solid var(--blue);
 }
 
@@ -469,9 +667,9 @@ a {
 }
 
 
-/* =========================
+/* =========================================================
    DEVELOPMENT PLAN
-========================= */
+========================================================= */
 
 .development-card {
     height: 100%;
@@ -479,6 +677,7 @@ a {
     padding: 35px;
 
     border: 1px solid var(--border);
+
     border-radius: 15px;
 
     background-color: var(--white);
@@ -488,26 +687,34 @@ a {
     color: var(--blue);
 
     font-family: "Poppins", sans-serif;
+
     font-weight: 700;
+
     font-size: 0.9rem;
 
     margin-bottom: 20px;
+}
+
+.development-card h3 {
+    margin-bottom: 15px;
 }
 
 .development-card span {
     display: inline-block;
 
     color: var(--blue);
+
     font-size: 0.8rem;
+
     font-weight: 700;
 
     margin-top: 10px;
 }
 
 
-/* =========================
-   MOTIVATION
-========================= */
+/* =========================================================
+   MOTIVATION SECTION
+========================================================= */
 
 .motivation-section {
     padding: 100px 0;
@@ -524,40 +731,322 @@ a {
 
 .motivation-section h2 {
     color: var(--white);
+
     margin-bottom: 25px;
 }
 
-.light-label {
-    color: var(--accent);
+.motivation-section p {
+    margin-bottom: 18px;
 }
 
 
-/* =========================
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.project-card {
+    padding: 40px;
+
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.04);
+
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(15, 23, 42, 0.07);
+}
+
+.project-number {
+    color: var(--blue);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 0.8rem;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+.project-card h2 {
+    font-size: 1.8rem;
+
+    margin-bottom: 8px;
+}
+
+.project-card h3 {
+    font-size: 1rem;
+
+    margin-top: 25px;
+
+    margin-bottom: 10px;
+}
+
+.project-role {
+    color: var(--blue);
+
+    font-weight: 700;
+}
+
+.technology-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.technology-list span {
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    background-color: var(--blue-light);
+
+    color: var(--blue);
+
+    font-size: 0.8rem;
+
+    font-weight: 600;
+}
+
+.project-summary {
+    height: 100%;
+
+    padding: 25px;
+
+    background-color: var(--light-bg);
+
+    border-radius: 12px;
+}
+
+.project-summary h3 {
+    margin-top: 0;
+}
+
+.project-summary li {
+    margin-bottom: 10px;
+}
+
+.project-details {
+    border-top: 1px solid var(--border);
+
+    margin-top: 30px;
+
+    padding-top: 25px;
+}
+
+.project-link {
+    display: inline-block;
+
+    margin-top: 5px;
+
+    color: var(--blue);
+
+    font-weight: 700;
+}
+
+.project-link:hover {
+    color: var(--navy);
+}
+
+.evidence-note {
+    padding: 40px;
+
+    background-color: var(--navy);
+
+    border-radius: 18px;
+
+    color: #dbeafe;
+}
+
+.evidence-note h2 {
+    color: var(--white);
+
+    margin-bottom: 15px;
+}
+
+.evidence-note p {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   GAP ANALYSIS
+========================================================= */
+
+.gap-introduction {
+    max-width: 850px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gap-analysis-card {
+    display: flex;
+
+    gap: 25px;
+
+    padding: 35px;
+
+    margin-bottom: 25px;
+
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    transition: 0.3s;
+}
+
+.gap-analysis-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(15, 23, 42, 0.07);
+}
+
+.gap-number {
+    min-width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--blue-light);
+
+    color: var(--blue);
+
+    border-radius: 12px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-weight: 700;
+}
+
+.gap-content {
+    width: 100%;
+}
+
+.gap-content h2 {
+    font-size: 1.35rem;
+}
+
+.gap-content h3 {
+    font-size: 0.9rem;
+
+    color: var(--blue);
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.current-level {
+    display: inline-block;
+
+    margin-top: 5px;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    background-color: var(--warning-bg);
+
+    color: var(--warning-text);
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   GAP ROADMAP
+========================================================= */
+
+.roadmap-section {
+    margin-top: 70px;
+}
+
+.roadmap-card {
+    height: 100%;
+
+    padding: 30px;
+
+    background-color: var(--light-bg);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+}
+
+.roadmap-card span {
+    display: block;
+
+    color: var(--blue);
+
+    font-family: "Poppins", sans-serif;
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+}
+
+.roadmap-card h3 {
+    margin-bottom: 10px;
+}
+
+.roadmap-card p {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 .footer {
     padding: 35px 0;
 
     background-color: #071629;
+
     color: #94a3b8;
 }
 
 .footer h4 {
     color: var(--white);
+
     font-size: 1rem;
+
     margin-bottom: 5px;
 }
 
 .footer p {
     margin-bottom: 0;
+
     font-size: 0.9rem;
 }
 
 
-/* =========================
+/* =========================================================
    RESPONSIVE DESIGN
-========================= */
+========================================================= */
 
 @media (max-width: 991px) {
 
@@ -575,6 +1064,7 @@ a {
 
     .timeline-item {
         grid-template-columns: 1fr;
+
         gap: 15px;
     }
 
@@ -623,6 +1113,20 @@ a {
         padding: 30px 20px;
     }
 
+    .project-card {
+        padding: 25px;
+    }
+
+    .gap-analysis-card {
+        flex-direction: column;
+
+        padding: 25px;
+    }
+
+    .gap-number {
+        min-width: 50px;
+    }
+
     .footer {
         text-align: center;
     }
@@ -650,6 +1154,14 @@ a {
 
     .skill-card-header {
         flex-direction: column;
+    }
+
+    .project-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .category-heading {
+        align-items: center;
     }
 
 }
